@@ -15,7 +15,7 @@
 ### 方式 A：一键脚本（推荐）
 
 ```bat
-setup_env.ps1    # 双击或 powershell -ExecutionPolicy Bypass -File setup_env.ps1
+setup_env.ps1    # powershell -ExecutionPolicy Bypass -File setup_env.ps1
                  # 自动创建 .venv、安装核心依赖（默认清华 PyPI 镜像，失败自动换阿里云），
                  # 并尝试安装可选依赖（BGE 向量检索 + OCR）
 start.bat        # 启动应用，浏览器自动打开 http://127.0.0.1:8000
