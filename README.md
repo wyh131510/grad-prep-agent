@@ -6,6 +6,7 @@
 流程：**搜索 → 解析 → 筛选 → 总结 → 用户反馈 → 生成初稿 → 多智能体评审 → 答辩问题清单**。
 
 ---
+<img width="1891" height="1267" alt="image" src="https://github.com/user-attachments/assets/e70aa3cd-940f-4d1a-861e-4a3405276add" />
 
 ## 一、快速开始
 
