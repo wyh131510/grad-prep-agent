@@ -5,7 +5,7 @@
 
 ## 前置条件（一次性）
 
-1. **本机 Python 环境**：项目 `.venv` 已就绪（`setup_env.ps1` 装过核心依赖即可，可选依赖可跳过——打包时会自动排除 torch/BGE/OCR，安装版运行在降级模式，功能不受影响）。
+1. **本机 Python 环境**：项目 `.venv` 已就绪（`setup_env.ps1` 装过核心依赖即可，可选依赖可跳过——用精简版 `打包.bat` 会自动排除 torch/BGE/OCR，安装版运行在降级模式，功能不受影响）。
 2. **Inno Setup 6**（生成安装程序的工具，约 5MB）：
    - 官方下载：https://jrsoftware.org/isdl.php （选 `innosetup-6.x.x.exe`）
    - 安装时保持默认路径即可（脚本会找 `C:\Program Files (x86)\Inno Setup 6\ISCC.exe`）。
@@ -14,13 +14,25 @@
 
 ## 打包步骤
 
-双击 **`打包.bat`**（或命令行运行），它会依次：
+提供两种打包方式，**日常使用推荐精简版**：
+
+### 精简版（默认，推荐）—— 双击 `打包.bat`
+
+- 构建快（约 1~3 分钟）、安装包小（约 100 MB 级）；
+- 自动排除 torch/BGE/OCR，安装版运行在**降级模式**：向量检索退化为 BM25 + LLM 精排，图片/扫描件 OCR 跳过（文本型 PDF 不受影响）。
+
+### 完整版 —— 双击 `打包-full.bat`
+
+- 包含 BGE 向量检索（torch + sentence-transformers + transformers）与 OCR（rapidocr + onnxruntime）；
+- 构建慢（约 10~20 分钟，会长时间停在 `Looking for dynamic libraries`，**属正常现象，请勿中途关闭**）；
+- 安装包体积大（数百 MB）。
+
+两个脚本都会依次：
 
 1. 安装打包工具（`pyinstaller`、`pywebview`，清华镜像）；
 2. 用 PyInstaller 构建 `dist\GradPrepAgent\GradPrepAgent.exe`：
    - onedir 模式、无控制台窗口、带图标；
    - 打包 `web/` 前端资源、jieba 词典、uvicorn 动态模块；
-   - **完整功能版**：包含 BGE 向量检索（torch + sentence-transformers + transformers）与 OCR（rapidocr + onnxruntime），安装包体积较大（数百 MB），首次使用 BGE 时联网自动下载模型（默认 hf-mirror）。
 3. 用 Inno Setup 编译安装程序 → `dist\installer\GradPrepAgent_Setup.exe`。
 
 > 若第 3 步提示找不到 Inno Setup：先安装 Inno Setup 6 再重跑（第 2 步产物已就绪）。

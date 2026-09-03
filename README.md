@@ -96,6 +96,8 @@ grad-prep-agent/
 .venv\Scripts\python.exe run_desktop.py
 
 :: 一键打包 Windows 安装程序（桌面快捷方式 + 独立窗口）
+::   打包.bat       精简版（默认，约1~3分钟，排除 torch/BGE/OCR，运行在降级模式）
+::   打包-full.bat  完整版（含 BGE 向量检索 + OCR，约10~20分钟，体积数百 MB）
 打包.bat
 ```
 
