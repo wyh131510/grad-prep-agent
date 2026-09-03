@@ -1,0 +1,10 @@
+# ============================================================
+# 可选依赖（提升检索/解析能力）。未安装时系统自动降级：
+#   - 向量检索缺失 -> 退化为 BM25 + LLM 精排
+#   - OCR 缺失      -> 跳过图片文字提取（文本型 PDF 不受影响）
+# 安装方法（CPU 版 PyTorch，约 400MB，一次性下载）：
+#   python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   python -m pip install -r requirements-optional.txt
+# ============================================================
+sentence-transformers>=2.7
+rapidocr_onnxruntime>=1.3

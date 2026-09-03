@@ -1,0 +1,130 @@
+[
+  {
+    "id": "TS-01",
+    "domain": "计算机视觉",
+    "title": "LiteSeg: Lightweight Semantic Segmentation via Channel-Wise Attention",
+    "abstract": "Semantic segmentation plays a key role in scene understanding for autonomous driving. However, state-of-the-art models usually rely on heavy encoders and require excessive computation, which limits real-time deployment on edge devices. In this paper, we propose LiteSeg, a lightweight encoder-decoder network with channel-wise attention. The attention module recalibrates feature responses with negligible cost, and depthwise separable convolutions reduce the number of parameters. Experiments on Cityscapes and CamVid show that LiteSeg achieves 73.8% mIoU at 26 FPS on a single GPU, striking a better trade-off between accuracy and speed.",
+    "key_terms": [
+      {"en": "semantic segmentation", "zh": "语义分割"},
+      {"en": "attention mechanism", "zh": "注意力机制"},
+      {"en": "encoder-decoder", "zh": "编码器-解码器"},
+      {"en": "mIoU", "zh": "平均交并比"},
+      {"en": "real-time", "zh": "实时"}
+    ]
+  },
+  {
+    "id": "TS-02",
+    "domain": "计算机视觉",
+    "title": "DeepCrack-Net: A Convolutional Neural Network for Pavement Crack Detection",
+    "abstract": "Automatic pavement crack detection is essential for road maintenance. Traditional image processing methods are sensitive to noise and lighting conditions. We design DeepCrack-Net, a convolutional neural network with multi-scale feature fusion for pixel-level crack segmentation. A hierarchical feature fusion module combines shallow details and deep semantics to preserve thin crack structures. Evaluated on a public crack dataset, the model achieves an F1 score of 0.91 and outperforms the baseline methods.",
+    "key_terms": [
+      {"en": "crack detection", "zh": "裂缝检测"},
+      {"en": "convolutional neural network", "zh": "卷积神经网络"},
+      {"en": "feature fusion", "zh": "特征融合"},
+      {"en": "segmentation", "zh": "分割"}
+    ]
+  },
+  {
+    "id": "TS-03",
+    "domain": "机械制造",
+    "title": "Data-Driven Thermal Error Modeling and Compensation of CNC Machine Tool Spindles",
+    "abstract": "Thermal error is one of the dominant error sources in high-precision machining. This paper presents a data-driven thermal error modeling method for CNC machine tool spindles. Temperature sensors are deployed at key heat sources, and a thermal error prediction model is built with a long short-term memory network. The predicted error is then used for real-time error compensation in the numerical control system. Milling experiments on a five-axis machine tool show that the compensation method reduces the spindle thermal drift by more than 60%.",
+    "key_terms": [
+      {"en": "thermal error", "zh": "热误差"},
+      {"en": "spindle", "zh": "主轴"},
+      {"en": "error compensation", "zh": "误差补偿"},
+      {"en": "CNC machine tool", "zh": "数控机床"}
+    ]
+  },
+  {
+    "id": "TS-04",
+    "domain": "机械制造",
+    "title": "Deformation Control in Milling of Thin-Walled Titanium Alloy Parts Considering Residual Stress",
+    "abstract": "Thin-walled titanium alloy parts deform easily during milling due to low stiffness and residual stress redistribution. In this study, the influence of initial residual stress and cutting force on machining deformation is analyzed by finite element simulation. A deformation control strategy that combines an optimized clamping layout and symmetric machining sequences is proposed. Validation experiments show that the maximum deformation of thin-walled parts is reduced by 45% compared with conventional machining.",
+    "key_terms": [
+      {"en": "milling", "zh": "铣削"},
+      {"en": "thin-walled", "zh": "薄壁"},
+      {"en": "titanium alloy", "zh": "钛合金"},
+      {"en": "residual stress", "zh": "残余应力"},
+      {"en": "cutting force", "zh": "切削力"}
+    ]
+  },
+  {
+    "id": "TS-05",
+    "domain": "电力系统",
+    "title": "Coordinated Voltage Regulation of Distribution Networks with High Penetration of Distributed Generation",
+    "abstract": "The increasing penetration of distributed generation brings serious voltage violation problems to distribution networks. This paper proposes a coordinated voltage regulation strategy combining on-load tap changers, reactive power control of inverters, and energy storage systems. A model predictive control framework is formulated to coordinate devices at different time scales. Simulation on a modified IEEE 33-bus system verifies that the strategy keeps all bus voltages within limits under various scenarios.",
+    "key_terms": [
+      {"en": "distribution network", "zh": "配电网"},
+      {"en": "distributed generation", "zh": "分布式电源"},
+      {"en": "voltage regulation", "zh": "电压调控"},
+      {"en": "energy storage", "zh": "储能"},
+      {"en": "model predictive control", "zh": "模型预测控制"}
+    ]
+  },
+  {
+    "id": "TS-06",
+    "domain": "电力系统",
+    "title": "Transformer Fault Diagnosis Based on Dissolved Gas Analysis and an Improved Ensemble Learning Model",
+    "abstract": "Dissolved gas analysis is widely used for power transformer fault diagnosis. However, the fault samples are highly imbalanced, which degrades the performance of conventional classifiers. We propose an ensemble learning method that combines resampling and a cost-sensitive strategy to handle imbalanced data. Key gas ratios are selected as features, and the model outputs fault types including thermal faults and discharge faults. Experiments on real transformer data achieve an accuracy of 94.2%.",
+    "key_terms": [
+      {"en": "transformer", "zh": "变压器"},
+      {"en": "fault diagnosis", "zh": "故障诊断"},
+      {"en": "dissolved gas analysis", "zh": "溶解气体分析"},
+      {"en": "ensemble learning", "zh": "集成学习"},
+      {"en": "imbalanced data", "zh": "不平衡数据"}
+    ]
+  },
+  {
+    "id": "TS-07",
+    "domain": "土木工程",
+    "title": "Seismic Performance of Precast Concrete Beam-Column Joints Connected by Grouted Sleeves",
+    "abstract": "Precast concrete structures are being widely promoted, but the seismic performance of their connections remains a major concern. This paper investigates the seismic behavior of precast beam-column joints using grouted sleeve splices. Five full-scale specimens were tested under reversed cyclic loading. The failure modes, hysteresis curves, ductility and energy dissipation capacity are analyzed and compared with cast-in-place joints. Results indicate that properly detailed grouted sleeve joints can achieve comparable seismic performance.",
+    "key_terms": [
+      {"en": "precast concrete", "zh": "预制混凝土"},
+      {"en": "beam-column joint", "zh": "梁柱节点"},
+      {"en": "grouted sleeve", "zh": "灌浆套筒"},
+      {"en": "seismic performance", "zh": "抗震性能"},
+      {"en": "ductility", "zh": "延性"}
+    ]
+  },
+  {
+    "id": "TS-08",
+    "domain": "土木工程",
+    "title": "Early Warning of Deep Foundation Pit Excavation Based on Multi-Source Monitoring Data Fusion",
+    "abstract": "Deep foundation pit excavation in urban areas poses high risks to adjacent buildings and utilities. This paper develops an early warning framework that fuses multi-source monitoring data, including ground settlement, wall deflection and axial forces of struts. A data fusion model integrates the measurements and an early warning index is defined to grade the risk levels. A case study of a metro station pit shows that the framework issues warnings earlier than the conventional threshold-based method.",
+    "key_terms": [
+      {"en": "deep foundation pit", "zh": "深基坑"},
+      {"en": "monitoring", "zh": "监测"},
+      {"en": "early warning", "zh": "预警"},
+      {"en": "settlement", "zh": "沉降"},
+      {"en": "data fusion", "zh": "数据融合"}
+    ]
+  },
+  {
+    "id": "TS-09",
+    "domain": "管理科学",
+    "title": "Risk Propagation and Resilience Enhancement in E-Commerce Supply Chains under Disruption",
+    "abstract": "Supply chain disruptions can propagate along the network and cause severe losses. This paper studies the propagation mechanism of disruption risks in e-commerce supply chains. A complex network model is built to describe the interactions among suppliers, platforms and logistics nodes, and the cascading failure process is simulated. Based on the simulation, strategies such as redundant sourcing and flexible capacity are evaluated. The findings help managers improve supply chain resilience.",
+    "key_terms": [
+      {"en": "supply chain", "zh": "供应链"},
+      {"en": "disruption", "zh": "中断"},
+      {"en": "risk propagation", "zh": "风险传导"},
+      {"en": "resilience", "zh": "韧性"},
+      {"en": "complex network", "zh": "复杂网络"}
+    ]
+  },
+  {
+    "id": "TS-10",
+    "domain": "管理科学",
+    "title": "Financial Distress Prediction of Listed Companies Based on Machine Learning and Feature Selection",
+    "abstract": "Accurate financial distress prediction helps investors and regulators identify risks in advance. This paper constructs a prediction framework for Chinese listed companies. Financial ratios are extracted from annual reports, and feature selection methods are applied to remove redundant variables. Several machine learning models, including logistic regression, random forest and gradient boosting, are compared. The gradient boosting model achieves the highest AUC of 0.93, and the interpretability of the model is discussed.",
+    "key_terms": [
+      {"en": "financial distress", "zh": "财务困境"},
+      {"en": "machine learning", "zh": "机器学习"},
+      {"en": "feature selection", "zh": "特征选择"},
+      {"en": "gradient boosting", "zh": "梯度提升"},
+      {"en": "interpretability", "zh": "可解释性"}
+    ]
+  }
+]

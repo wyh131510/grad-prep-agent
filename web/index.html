@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>毕设 Agent · 文献调研 × 开题报告</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 后端未连接提示条（接口调用失败时显示，页面本身不崩溃） -->
+<div id="backendBanner" class="banner-offline" hidden>
+  <span class="banner-ico">⚠️</span>
+  <div class="banner-body">
+    <b>后端未连接</b>
+    <span>接口调用失败：请先启动后端服务（运行 <code>python run.py</code> 或 <code>start.bat</code>）后刷新本页。当前为静态页面骨架，可浏览界面，但接口相关操作会提示错误。</span>
+  </div>
+  <button class="btn btn-white btn-sm" id="bannerRetry" onclick="App.retryBackend()">重新检测</button>
+</div>
+
+<div class="app-shell">
+
+  <!-- ============ 左侧固定侧边栏 ============ -->
+  <aside class="sidebar">
+    <div class="side-brand">
+      <span class="logo">🎓</span>
+      <div class="side-brand-text"><b>毕设 Agent</b><small>文献调研 → 开题初稿</small></div>
+    </div>
+    <nav class="side-nav">
+      <button class="nav-item" data-view="overview"><span class="nav-ico">🏠</span><span>概览</span></button>
+      <button class="nav-item" data-view="tasks"><span class="nav-ico">🔍</span><span>任务与检索</span></button>
+      <button class="nav-item" data-view="library"><span class="nav-ico">📚</span><span>文献库</span></button>
+      <button class="nav-item" data-view="proposal"><span class="nav-ico">✍️</span><span>开题报告</span></button>
+      <button class="nav-item" data-view="review"><span class="nav-ico">👥</span><span>评审与答辩</span></button>
+      <button class="nav-item" data-view="settings"><span class="nav-ico">⚙️</span><span>设置</span></button>
+    </nav>
+    <div class="side-foot">
+      <span class="conn-dot" id="connDot"></span>
+      <span id="connText">正在检测后端…</span>
+    </div>
+  </aside>
+
+  <!-- ============ 主区域 ============ -->
+  <div class="main">
+    <header class="topbar">
+      <div>
+        <h1 id="viewTitle">概览</h1>
+        <p class="topbar-sub" id="viewSub">项目介绍 · 全流程示意 · 统计</p>
+      </div>
+      <div class="topbar-right" id="topbarRight"></div>
+    </header>
+
+    <div class="content">
+      <section id="view-overview" class="view"></section>
+      <section id="view-tasks" class="view"></section>
+      <section id="view-library" class="view"></section>
+      <section id="view-proposal" class="view"></section>
+      <section id="view-review" class="view"></section>
+      <section id="view-settings" class="view"></section>
+    </div>
+
+    <footer class="app-footer">🎓 毕业设计前期准备 Agent · 聚焦「文献调研 → 开题报告初稿」· 让每一篇文献都为毕设服务</footer>
+  </div>
+</div>
+
+<!-- 全局 toast -->
+<div id="toastBox" class="toast-box" aria-live="polite"></div>
+
+<!-- 全局任务进度面板（SSE 长任务：进度条 + 滚动日志流） -->
+<div id="jobPanel" class="job-panel" hidden>
+  <div class="job-head">
+    <div class="job-head-text">
+      <b id="jobTitle">任务进行中</b>
+      <div class="job-sub" id="jobSub">准备中…</div>
+    </div>
+    <button class="job-close" id="jobClose" title="收起面板">✕</button>
+  </div>
+  <div class="job-bar"><div class="job-bar-fill" id="jobBar"></div></div>
+  <div class="job-meta-row">
+    <span class="job-percent" id="jobPercent">0%</span>
+    <span class="job-state" id="jobState"></span>
+  </div>
+  <div class="job-log" id="jobLog"></div>
+  <div class="job-note">⚠️ 任务进行中：中途取消不会停止后台任务，请耐心等待完成。</div>
+</div>
+
+<!-- 遮罩 + 详情抽屉 -->
+<div class="mask" id="drawerMask" hidden></div>
+<aside class="drawer" id="drawer" hidden>
+  <div class="drawer-head">
+    <h3 id="drawerTitle">详情</h3>
+    <button class="icon-btn" id="drawerClose" title="关闭">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
+<!-- 遮罩 + 模态框 -->
+<div class="mask" id="modalMask" hidden></div>
+<div class="modal" id="modal" hidden>
+  <div class="modal-head">
+    <h3 id="modalTitle"></h3>
+    <button class="icon-btn" id="modalClose" title="关闭">✕</button>
+  </div>
+  <div class="modal-body" id="modalBody"></div>
+</div>
+
+<script src="api.js"></script>
+<script src="md.js"></script>
+<script src="ui.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

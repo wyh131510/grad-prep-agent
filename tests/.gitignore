@@ -1,0 +1,6 @@
+# 评测产物目录（CSV 导出、报告 JSON、人工标注中间文件）
+output/
+
+# Python 缓存
+__pycache__/
+*.pyc
